@@ -7,6 +7,9 @@ export default function HeroSection() {
 
   return (
     <div style={{ width: "100vw", height: "100vh", overflow: "hidden", position: "relative" }}>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Chela+One&family=Norican&family=Pompiere&family=Varela+Round&display=swap');
+      </style>
       <Spline scene="https://my.spline.design/cybermannequin-GlCTzwPSJUpWxSIXfb6qxuqj/scene.splinecode" />
 
       {/* Sidebar removed */}
@@ -46,12 +49,13 @@ export default function HeroSection() {
         <div className="flex flex-col justify-between px-8 pb-12" style={{ height: "calc(100vh - 88px)", pointerEvents: "none" }}>
           {/* Main Headline - Positioned Lower */}
           <div className="pt-48" style={{ pointerEvents: "auto", maxWidth: "fit-content" }}>
-            <h1 className="text-white font-normal tracking-tight" style={{ fontSize: '3.5rem', lineHeight: '1.15', fontWeight: '400', letterSpacing: '-0.02em' }}>
-              Build beautiful interfaces, faster.
+            <h1 className="text-white font-normal tracking-tight" style={{ fontSize: '3.5rem', lineHeight: '1.15', fontWeight: '400', letterSpacing: '-0.02em', fontFamily: 'Anton, sans-serif' }}>
+              Build beautiful interfaces,<br />
+              faster and effortlessly
             </h1>
 
-            <p className="text-white/80 text-lg mt-4 max-w-xl" style={{ lineHeight: '1.4' }}>
-              A curated collection of ready-to-use React + Tailwind components — designed for modern web builders.
+            <p className="text-white/80 text-lg mt-4 max-w-xl" style={{ lineHeight: '1.4', fontFamily: 'Varela Round, sans-serif' }}>
+              A curated collection of ready-to-use React + Tailwind components  designed for modern web builders.
             </p>
 
             {/* CTA Buttons: Primary + Secondary */}
