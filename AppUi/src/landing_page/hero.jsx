@@ -1,116 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import Spline from "@splinetool/react-spline";
 import sideBackImage from "../assets/side_back.png";
 
 export default function HeroSection() {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [isOption2Open, setIsOption2Open] = useState(false);
+  
 
   return (
     <div style={{ width: "100vw", height: "100vh", overflow: "hidden", position: "relative" }}>
-      {/* Spline 3D Background - Keep it simple like it was working */}
       <Spline scene="https://my.spline.design/cybermannequin-GlCTzwPSJUpWxSIXfb6qxuqj/scene.splinecode" />
-      
-      {/* Backdrop Blur */}
-      {isSidebarOpen && (
-        <div 
-          className="fixed inset-0 backdrop-blur-md bg-black/30 transition-all duration-300"
-          style={{ zIndex: 40 }}
-          onClick={() => setIsSidebarOpen(false)}
-        />
-      )}
 
-      {/* Sidebar */}
-      <div 
-        className={`fixed top-0 right-0 h-full border-l border-white/10 transition-transform duration-300 ease-in-out ${
-          isSidebarOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
-        style={{ 
-          width: '400px', 
-          zIndex: 50,
-          backgroundImage: `url(${sideBackImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}
-      >
-        <div className="relative flex flex-col h-full p-8">
-          {/* Close Button */}
-          <button 
-            onClick={() => setIsSidebarOpen(false)}
-            className="self-end text-white/70 hover:text-white transition-colors mb-8"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          </button>
+      {/* Sidebar removed */}
 
-          {/* Menu Options */}
-          <div className="flex flex-col gap-4 flex-1">
-            {/* Option 1 */}
-            <button className="w-full text-left px-6 py-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all">
-              <span className="text-white text-lg font-medium">Option 1</span>
-            </button>
-
-            {/* Option 2 with Suboptions */}
-            <div className="flex flex-col gap-2">
-              <button 
-                onClick={() => setIsOption2Open(!isOption2Open)}
-                className="w-full text-left px-6 py-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all flex items-center justify-between"
-              >
-                <span className="text-white text-lg font-medium">Option 2</span>
-                <svg 
-                  width="16" 
-                  height="16" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2"
-                  className={`transition-transform duration-200 ${isOption2Open ? 'rotate-180' : ''}`}
-                >
-                  <polyline points="6 9 12 15 18 9" />
-                </svg>
-              </button>
-
-              {/* Suboptions */}
-              {isOption2Open && (
-                <div className="flex flex-col gap-2 pl-4">
-                  <button className="w-full text-left px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all">
-                    <span className="text-white/90 text-base font-medium">Suboption 2.1</span>
-                  </button>
-                  <button className="w-full text-left px-6 py-3 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all">
-                    <span className="text-white/90 text-base font-medium">Suboption 2.2</span>
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* Option 3 */}
-            <button className="w-full text-left px-6 py-4 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 transition-all">
-              <span className="text-white text-lg font-medium">Option 3</span>
-            </button>
-          </div>
-
-          {/* Brand Name at Bottom - Full Width */}
-          <div className="w-full flex items-center justify-center mt-auto pt-12 pb-8">
-            <h2 
-              className="text-white font-black tracking-tighter text-center"
-              style={{ 
-                fontSize: '7rem', 
-                fontFamily: 'system-ui, -apple-system, sans-serif', 
-                letterSpacing: '-0.1em',
-                lineHeight: '0.9',
-                textShadow: '0 0 40px rgba(255,255,255,0.4)',
-                WebkitTextStroke: '1px rgba(255,255,255,0.3)'
-              }}
-            >
-              DXNII
-            </h2>
-          </div>
-        </div>
-      </div>
-      
       {/* UI Overlay - Completely transparent to mouse events except specific elements */}
       <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
         {/* Navigation Bar */}
@@ -118,7 +18,7 @@ export default function HeroSection() {
           {/* Logo */}
           <div className="flex items-center" style={{ pointerEvents: "auto" }}>
             <div className="text-white font-black tracking-tighter" style={{ fontSize: '5.5rem', fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.08em', lineHeight: '1' }}>
-              DXNII
+              APPUI
             </div>
             <span className="text-white/40 text-xs ml-3 mt-8">©2025</span>
           </div>
@@ -136,19 +36,9 @@ export default function HeroSection() {
               Login
             </a>
             <a href="/dashboard" className="bg-white/10 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded hover:bg-white/20 transition-colors border border-white/20 inline-block">
-              Access Dashboard
+              Browse Components
             </a>
-            {/* Menu Icon */}
-            <button 
-              onClick={() => setIsSidebarOpen(true)}
-              className="text-white p-2 hover:bg-white/10 rounded transition-colors"
-            >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="3" y1="12" x2="21" y2="12" />
-                <line x1="3" y1="6" x2="21" y2="6" />
-                <line x1="3" y1="18" x2="21" y2="18" />
-              </svg>
-            </button>
+            {/* Menu Icon removed */}
           </div>
         </nav>
 
@@ -205,9 +95,10 @@ export default function HeroSection() {
             {/* Bottom Right - Description */}
             <div className="max-w-md">
               <p className="text-white/80 text-sm leading-relaxed">
-                <span className="font-semibold">Dxn</span> is a high-throughput data orchestration tool for<br />
-                critical infrastructure — designed to ensure uptime,<br />
-                simplify cloud deployment, and adapt at any scale.
+                <span className="font-semibold">AppUi </span>
+                 - collection of beautiful, reusable, and production-ready UI<br />
+                components built with React + Tailwind CSS,  Designed to speed <br />
+                to speed up your workflow just copy, paste, and customize
               </p>
             </div>
           </div>
