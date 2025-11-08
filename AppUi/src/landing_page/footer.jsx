@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Twitter, Linkedin, Mail, Code2, ArrowUpRight } from 'lucide-react';
+import image from '../assets/footer.png';
 
 export default function Footer() {
   const navLinks = [
@@ -26,7 +27,7 @@ export default function Footer() {
           {/* Brand section */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <Code2 className="w-8 h-8 text-purple-500" />
+              <Code2 className="w-8 h-8 text-white" />
               <span className="text-2xl font-bold text-white">
                 APP.UI
               </span>
@@ -72,7 +73,7 @@ export default function Footer() {
         </div>
 
         {/* Newsletter section */}
-        <div className="mb-12 p-6 rounded-xl border border-purple-500/30 bg-purple-500/5">
+        <div className="mb-12 p-6 rounded-xl border border-white/20 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }}>
           <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <h3 className="text-lg font-bold mb-1">Stay updated</h3>
@@ -96,7 +97,7 @@ export default function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400">
             <div>
               <span>© 2025 APP.UI by </span>
-              <a href="#" className="text-purple-400 hover:text-purple-300 transition-colors font-medium">
+              <a href="#" className="text-white hover:text-gray-300 transition-colors font-medium">
                 Ayan Pandey
               </a>
             </div>
