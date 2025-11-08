@@ -26,8 +26,8 @@ export default function AboutSection() {
 
   return (
     <div className="min-h-screen bg-black text-white">
-      {/* Header with smooth transition */}
-      <div className="px-8 py-8 border-b border-gray-800/30 bg-black">
+      {/* Header */}
+      <div className="px-8 py-8 border-b border-gray-800">
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
             <h1 className="text-[80px] font-bold leading-none tracking-tight mb-4">
