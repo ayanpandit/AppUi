@@ -72,23 +72,35 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Newsletter section */}
+        {/* Feedback section */}
         <div className="mb-12 p-6 rounded-xl border border-white/20 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }}>
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="flex flex-col gap-6">
             <div>
-              <h3 className="text-lg font-bold mb-1">Stay updated</h3>
-              <p className="text-sm text-gray-400">Get notified about new components and features.</p>
+              <h3 className="text-lg font-bold mb-1">Feedback</h3>
+              <p className="text-sm text-gray-400">Share your thoughts or suggestions to help us improve app.ui!</p>
             </div>
-            <div className="flex gap-2 w-full md:w-auto">
-              <input
-                type="email"
-                placeholder="your@email.com"
-                className="px-4 py-2 bg-black border border-white/10 rounded-lg text-sm focus:outline-none focus:border-purple-500 transition-colors flex-1 md:w-64"
+            <form className="flex flex-col gap-4">
+              <div className="flex flex-col md:flex-row gap-4">
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="px-4 py-2 bg-black border border-white/10 rounded-lg text-sm focus:outline-none focus:border-purple-500 transition-colors flex-1"
+                />
+                <input
+                  type="text"
+                  placeholder="LinkedIn Username or URL"
+                  className="px-4 py-2 bg-black border border-white/10 rounded-lg text-sm focus:outline-none focus:border-purple-500 transition-colors flex-1"
+                />
+              </div>
+              <textarea
+                placeholder="Your message..."
+                rows={3}
+                className="px-4 py-2 bg-black border border-white/10 rounded-lg text-sm focus:outline-none focus:border-purple-500 transition-colors resize-none"
               />
-              <button className="px-6 py-2 bg-purple-600 rounded-lg text-sm font-medium hover:bg-purple-500 transition-colors whitespace-nowrap">
-                Subscribe
+              <button type="submit" className="self-end px-6 py-2 bg-purple-600 rounded-lg text-sm font-medium hover:bg-purple-500 transition-colors whitespace-nowrap">
+                Submit
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
