@@ -10,15 +10,30 @@ export function Testimonials() {
       height: '800px', 
       position: 'relative', 
       display: 'flex', 
+      flexDirection: 'column',
       alignItems: 'center', 
       justifyContent: 'center',
-      background: 'linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%)'
+      background: '#000000'
     }}>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Chela+One&family=Norican&family=Pompiere&family=Varela+Round&display=swap');
+      </style>
+      <h2 style={{
+        fontFamily: 'Anton, sans-serif',
+        fontSize: '4rem',
+        color: 'white',
+        textAlign: 'center',
+        marginBottom: '0.5rem',
+        textShadow: '2px 2px 0px #000, 4px 4px 0px #333, 6px 6px 10px rgba(0,0,0,0.5)',
+        letterSpacing: '2px'
+      }}>
+        Loved by Developers
+      </h2>
       <div style={{
         padding: '2px',
         borderRadius: '50%',
         background: 'linear-gradient(45deg, #ffffff, #888888)',
-        boxShadow: '0 0 30px rgba(255,255,255,0.3)'
+        boxShadow: '0 0 50px rgba(0,0,0,0.8), 0 0 100px rgba(255,255,255,0.1), inset 0 0 50px rgba(0,0,0,0.5)'
       }}>
         <Carousel
           baseWidth={500}
