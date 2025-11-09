@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Spline from "@splinetool/react-spline";
 import sideBackImage from "../assets/side_back.png";
-import PageDivider from '../components/page_divider';
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   const [time, setTime] = useState("");
   const [country, setCountry] = useState("...");
-  const [showPageDivider, setShowPageDivider] = useState(false);
 
   useEffect(() => {
     // Update time every 50ms for ms precision
@@ -30,10 +30,6 @@ export default function HeroSection() {
       .then(name => setCountry((name || "").toUpperCase()))
       .catch(() => setCountry("UNKNOWN"));
   }, []);
-
-  if (showPageDivider) {
-    return <PageDivider />;
-  }
 
   return (
     <div style={{ width: "100vw", height: "100vh", overflow: "hidden", position: "relative" }}>
@@ -64,7 +60,7 @@ export default function HeroSection() {
             <a
               href="#"
               className="bg-white/10 backdrop-blur-sm text-white text-sm font-medium px-5 py-2.5 rounded hover:bg-white/20 transition-colors border border-white/20 inline-block"
-              onClick={e => { e.preventDefault(); setShowPageDivider(true); }}
+              onClick={e => { e.preventDefault(); navigate('/component_select'); }}
               style={{ cursor: 'pointer' }}
             >
               Browse Components
@@ -92,7 +88,7 @@ export default function HeroSection() {
                 href="#"
                 className="bg-gradient-to-r from-[#c4ff0e] via-[#00ffff] to-[#c4ff0e] bg-[length:200%_100%] text-black font-bold px-6 py-3 rounded-lg flex items-center gap-3 group relative overflow-hidden hover:shadow-[0_0_30px_rgba(196,255,14,0.5)] transition-all duration-300 hover:scale-105 animate-gradient"
                 style={{ backgroundPosition: '0% 50%', cursor: 'pointer' }}
-                onClick={e => { e.preventDefault(); setShowPageDivider(true); }}
+                onClick={e => { e.preventDefault(); navigate('/component_select'); }}
               >
                 <span className="relative z-10 text-base tracking-wide">Browse Components</span>
               </a>
