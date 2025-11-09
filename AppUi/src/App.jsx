@@ -29,3 +29,8 @@ function App() {
   );
 }
 export default App;
+/*
+import PageDivider from "./components/page_divider";
+export default function App() {
+  return <PageDivider />;
+}*/
