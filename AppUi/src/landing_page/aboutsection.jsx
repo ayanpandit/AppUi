@@ -44,7 +44,8 @@ export default function AboutSection() {
           <div className="flex items-center gap-3 mt-4">
             <div className="w-3 h-3 rounded-full bg-[#c4ff0e]"></div>
             <button className="px-6 py-2.5 bg-[#c4ff0e] text-black text-xs font-bold tracking-wider uppercase rounded-sm hover:bg-[#d4ff3e] transition-colors">
-              GET STARTED
+
+              BROWSE COMPONENTS
             </button>
           </div>
         </div>
@@ -92,9 +93,9 @@ export default function AboutSection() {
               </div>
 
               <p className="text-base leading-relaxed mb-6">
-                App.UI is an open-source UI component library created by developer Ayan Pandey. 
-                It provides ready-to-use, copy-paste UI components for modern frontend developers 
-                using React and Tailwind CSS. Our mission is to make building beautiful websites 
+                App.UI is an open-source UI component library created by developer Ayan Pandey.
+                It provides ready-to-use, copy-paste UI components for modern frontend developers
+                using React and Tailwind CSS. Our mission is to make building beautiful websites
                 faster and easier by offering prebuilt UI blocks in one comprehensive library.
               </p>
             </div>
@@ -140,9 +141,9 @@ export default function AboutSection() {
             <div>
               <h2 className="text-xl font-bold tracking-wide mb-6">[ OUR MISSION ]</h2>
               <p className="text-base leading-relaxed">
-                To empower frontend developers, web designers, students, freelancers, and indie makers 
-                by providing a comprehensive collection of high-quality, customizable UI components. 
-                We believe in the power of open-source collaboration to accelerate web development and 
+                To empower frontend developers, web designers, students, freelancers, and indie makers
+                by providing a comprehensive collection of high-quality, customizable UI components.
+                We believe in the power of open-source collaboration to accelerate web development and
                 create stunning user experiences.
               </p>
             </div>
@@ -154,9 +155,9 @@ export default function AboutSection() {
                   WHAT WE OFFER
                 </h3>
                 <p className="text-base leading-relaxed">
-                  Our library includes essential UI components like navigation bars, hero sections, 
-                  feature sections, call-to-action blocks, testimonials, pricing cards, dashboards, 
-                  sidebars, and footers — all built with React and styled with Tailwind CSS for 
+                  Our library includes essential UI components like navigation bars, hero sections,
+                  feature sections, call-to-action blocks, testimonials, pricing cards, dashboards,
+                  sidebars, and footers — all built with React and styled with Tailwind CSS for
                   maximum flexibility and performance.
                 </p>
               </div>
@@ -167,8 +168,8 @@ export default function AboutSection() {
 
               <div className="pt-6 border-t border-gray-800">
                 <p className="text-sm leading-relaxed text-gray-300 italic">
-                  Every component is designed with modern best practices, accessibility in mind, 
-                  and full customization options. Simply copy, paste, and adapt to your project's 
+                  Every component is designed with modern best practices, accessibility in mind,
+                  and full customization options. Simply copy, paste, and adapt to your project's
                   needs — no complex setup required.
                 </p>
               </div>
