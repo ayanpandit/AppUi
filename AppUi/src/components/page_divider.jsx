@@ -1,17 +1,32 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from './header';
 import SideNav from './side_nav';
 import MainArea from './main_area';
 import Footer from '../landing_page/footer';
+import { getComponentsByCategory } from '../controller/component_select';
 
 export default function PageDivider() {
+  const location = useLocation();
+  const category = location.state?.category || 'navbar';
+  const components = getComponentsByCategory(category);
+  
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [selectedComponent, setSelectedComponent] = useState(components[0] || null);
+
+  const handleComponentSelect = (component) => {
+    setSelectedComponent(component);
+    setSidebarOpen(false); // Close sidebar on mobile after selection
+  };
 
   return (
     <div className="flex flex-col h-screen w-full">
       {/* Header - Fixed height */}
       <div className="w-full h-16 flex-shrink-0">
-        <Header onToggleSidebar={() => setSidebarOpen(!sidebarOpen)} />
+        <Header 
+          onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+          componentName={selectedComponent?.displayName || ''}
+        />
       </div>
 
       {/* Middle Section - Sidebar + Main Content */}
@@ -26,12 +41,16 @@ export default function PageDivider() {
 
         {/* Sidebar */}
         <div className={`fixed md:relative inset-y-0 left-0 z-50 w-64 bg-gray-900 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out md:block overflow-y-auto`}>
-          <SideNav />
+          <SideNav 
+            components={components}
+            selectedComponent={selectedComponent}
+            onSelectComponent={handleComponentSelect}
+          />
         </div>
 
         {/* Main Content Area */}
         <div className="flex-1 overflow-y-auto md:ml-0">
-          <MainArea />
+          <MainArea selectedComponent={selectedComponent} />
         </div>
       </div>
 
