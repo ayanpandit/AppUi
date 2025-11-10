@@ -40,7 +40,7 @@ export default function PageDivider() {
         )}
 
         {/* Sidebar */}
-        <div className={`fixed md:relative inset-y-0 left-0 z-50 w-64 bg-gray-900 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out md:block overflow-y-auto`}>
+        <div className={`fixed md:relative inset-y-0 left-0 z-50 w-64 lg:w-72 bg-black border-r border-white/10 transform ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'} md:translate-x-0 transition-transform duration-300 ease-in-out md:block overflow-y-auto`}>
           <SideNav 
             components={components}
             selectedComponent={selectedComponent}

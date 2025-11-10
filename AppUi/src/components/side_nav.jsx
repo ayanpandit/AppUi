@@ -2,48 +2,29 @@ import React from 'react';
 
 export default function SideNav({ components, selectedComponent, onSelectComponent }) {
   return (
-    <div className="w-full h-full bg-black p-4">
-      <h3 className="text-white text-lg font-bold mb-4 px-2">Components</h3>
-      <div className="space-y-3">
+    <div className="w-full h-full bg-black p-3 md:p-4 lg:p-6">
+      <h3 className="text-white text-xs md:text-sm font-bold mb-4 md:mb-6 px-2 tracking-wider uppercase">[ Components ]</h3>
+      <div className="space-y-2 md:space-y-3">
         {components && components.length > 0 ? (
           components.map((component) => (
-            <div 
+            <button
               key={component.id}
               onClick={() => onSelectComponent(component)}
-              className={`relative bg-gradient-to-br from-gray-500 via-gray-600 to-gray-700 rounded-2xl p-6 min-h-[240px] border-t-4 border-l-4 border-gray-400 border-r-4 border-b-4 border-r-gray-800 border-b-gray-900 shadow-[inset_-2px_-2px_8px_rgba(0,0,0,0.6),inset_2px_2px_8px_rgba(255,255,255,0.1),0_20px_40px_rgba(0,0,0,0.9)] hover:shadow-[inset_-2px_-2px_8px_rgba(0,0,0,0.4),inset_2px_2px_8px_rgba(255,255,255,0.15),0_25px_50px_rgba(0,0,0,0.95)] transition-all duration-300 hover:translate-y-[-8px] hover:scale-[1.02] transform-gpu perspective-1000 cursor-pointer group overflow-hidden ${
-                selectedComponent?.id === component.id ? 'ring-2 ring-purple-400' : ''
+              className={`relative w-full text-left px-3 md:px-4 py-3 md:py-4 rounded-lg transition-all duration-300 flex items-center justify-center cursor-pointer group overflow-hidden ${
+                selectedComponent?.id === component.id
+                  ? 'bg-white/15 backdrop-blur-md text-white font-bold border border-white/20'
+                  : 'bg-white/5 backdrop-blur-md text-gray-300 hover:bg-white/10 hover:text-white border border-white/10'
               }`}
             >
-              {/* Glow effect */}
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-32 bg-cyan-400/30 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 right-0 w-24 h-24 bg-purple-400/30 rounded-full blur-2xl"></div>
-              </div>
-              
-              {/* Text content */}
-              <div className="relative z-10 text-center">
-                <h4 className="text-4xl font-black tracking-tight text-white group-hover:scale-110 transition-transform duration-300" style={{ fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+              <div className="text-center w-full">
+                <h4 className="text-xs md:text-sm font-semibold tracking-wide">
                   {component.name}
                 </h4>
-                <p className="text-white/60 text-xs mt-3 tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-100">
-                  Component
-                </p>
-                
-                {/* Decorative lines */}
-                <div className="mt-4 flex items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 delay-200">
-                  <div className="h-px w-8 bg-gradient-to-r from-transparent to-cyan-400"></div>
-                  <div className="w-1 h-1 rounded-full bg-cyan-400"></div>
-                  <div className="h-px w-8 bg-gradient-to-l from-transparent to-purple-400"></div>
-                </div>
               </div>
-              
-              {/* Corner accents */}
-              <div className="absolute top-2 left-2 w-8 h-8 border-l-2 border-t-2 border-cyan-400/0 group-hover:border-cyan-400/50 transition-colors duration-300"></div>
-              <div className="absolute bottom-2 right-2 w-8 h-8 border-r-2 border-b-2 border-purple-400/0 group-hover:border-purple-400/50 transition-colors duration-300"></div>
-            </div>
+            </button>
           ))
         ) : (
-          <p className="text-gray-400 text-sm px-2">No components available</p>
+          <p className="text-gray-400 text-xs md:text-sm px-2 tracking-wider">[ No components available ]</p>
         )}
       </div>
     </div>
