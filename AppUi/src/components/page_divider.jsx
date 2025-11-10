@@ -22,7 +22,7 @@ export default function PageDivider() {
   return (
     <div className="flex flex-col h-screen w-full">
       {/* Header - Fixed height */}
-      <div className="w-full h-16 flex-shrink-0">
+      <div className="w-full h-20 md:h-24 lg:h-28 flex-shrink-0">
         <Header 
           onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
           componentName={selectedComponent?.displayName || ''}
