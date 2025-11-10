@@ -29,9 +29,3 @@ function App() {
   );
 }
 export default App;
-/*
-import EcoNavbar from "./components/test";
-export default function App() {
-  return <EcoNavbar />;
-}
-*/

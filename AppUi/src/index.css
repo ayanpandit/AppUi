@@ -11,4 +11,8 @@ html {
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
+
+body {
+  background-color: black;
+}
   

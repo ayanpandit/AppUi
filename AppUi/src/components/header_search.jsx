@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { Search } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 export default function HeaderSearch({ onSearch }) {
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate('/');
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -18,7 +24,7 @@ export default function HeaderSearch({ onSearch }) {
   return (
     <nav className="flex items-center justify-between px-8 py-6 bg-transparent">
       {/* Logo - Left */}
-      <div className="flex items-center">
+      <div className="flex items-center cursor-pointer" onClick={handleHomeClick}>
         <div className="text-white font-black tracking-tighter" style={{ fontSize: '5.5rem', fontFamily: 'system-ui, -apple-system, sans-serif', letterSpacing: '-0.08em', lineHeight: '1' }}>
           APP.UI
         </div>

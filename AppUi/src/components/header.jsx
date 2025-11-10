@@ -17,7 +17,7 @@ export default function Header({ onToggleSidebar, componentName }) {
   return (
     <nav className="w-full h-20 md:h-24 lg:h-28 flex items-center justify-between px-4 md:px-8 bg-black border-b border-white/10">
       {/* Logo - Left */}
-      <div className="flex items-center gap-2 md:gap-3">
+      <div className="flex items-center gap-2 md:gap-3 cursor-pointer" onClick={handleHomeClick}>
         <img 
           src={logo} 
           alt="APP.UI Logo" 
