@@ -10,6 +10,10 @@ export default function Header({ onToggleSidebar, componentName }) {
     navigate('/component_select');
   };
 
+  const handleHomeClick = () => {
+    navigate('/');
+  };
+
   return (
     <nav className="w-full h-20 md:h-24 lg:h-28 flex items-center justify-between px-4 md:px-8 bg-black border-b border-white/10">
       {/* Logo - Left */}
@@ -34,6 +38,12 @@ export default function Header({ onToggleSidebar, componentName }) {
 
       {/* Right side - Navigation */}
       <div className="hidden md:flex items-center gap-3 lg:gap-6">
+        <button
+          onClick={handleHomeClick}
+          className="text-white/90 text-xs font-bold tracking-wider uppercase hover:text-white transition-colors"
+        >
+          Home
+        </button>
         <a href="#" className="text-white/90 text-xs font-bold tracking-wider uppercase hover:text-white transition-colors">
           About
         </a>
