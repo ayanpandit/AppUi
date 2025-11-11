@@ -1,28 +1,7 @@
 import React from 'react';
 
 export default function Aboutus() {
-  const features = [
-    {
-      title: "OPEN SOURCE RECOGNITION",
-      year: "2024",
-      link: "#"
-    },
-    {
-      title: "REACT COMPONENT LIBRARY AWARD",
-      year: "2023",
-      link: "#"
-    },
-    {
-      title: "TAILWIND CSS INNOVATION",
-      year: "2022",
-      link: "#"
-    },
-    {
-      title: "DEVELOPER TOOL EXCELLENCE",
-      year: "2021",
-      link: "#"
-    }
-  ];
+
 
   return (
     <div className="min-h-screen bg-black text-white">
@@ -62,10 +41,7 @@ export default function Aboutus() {
                 alt="About App.UI"
                 className="w-full h-[700px] object-cover rounded-lg"
               />
-              <button className="mt-8 px-6 py-3 bg-white text-black text-xs font-bold tracking-wider uppercase hover:bg-gray-200 transition-colors">
-                VIEW GITHUB
-              </button>
-              <p className="mt-8 text-sm text-gray-400">[ EST. 2021 ]</p>
+
             </div>
           </div>
 
