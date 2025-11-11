@@ -66,9 +66,9 @@ export default function AboutSection() {
                 alt="About App.UI"
                 className="w-full h-[700px] object-cover rounded-lg"
               />
-              <button className="mt-8 px-6 py-3 bg-white text-black text-xs font-bold tracking-wider uppercase hover:bg-gray-200 transition-colors">
+              <a href="https://github.com/ayanpandit/AppUi" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block px-6 py-3 bg-white text-black text-xs font-bold tracking-wider uppercase hover:bg-gray-200 transition-colors">
                 VIEW GITHUB
-              </button>
+              </a>
               <p className="mt-8 text-sm text-gray-400">[ EST. 2021 ]</p>
             </div>
           </div>
