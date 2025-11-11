@@ -1,13 +1,39 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Github, Twitter, Linkedin, Mail, Code2, ArrowUpRight } from 'lucide-react';
 import image from '../assets/footer.png';
 import logo from '../assets/logo.png';
 
 export default function Footer() {
+  const navigate = useNavigate();
+
   const navLinks = [
-    { title: 'Components', items: ['Navigation', 'Hero Sections', 'Features', 'CTAs'] },
-    { title: 'Resources', items: ['Documentation', 'Examples', 'Templates', 'Blog'] },
-    { title: 'Community', items: ['GitHub', 'Discord', 'Twitter'] },
+    { 
+      title: 'Components', 
+      items: [
+        { name: 'Navigation', link: '/component_select' },
+        { name: 'Hero Sections', link: '/component_select' },
+        { name: 'Features', link: '/component_select' },
+        { name: 'CTAs', link: '/component_select' }
+      ]
+    },
+    { 
+      title: 'Resources', 
+      items: [
+        { name: 'Documentation', link: '#' },
+        { name: 'Examples', link: '#' },
+        { name: 'Templates', link: '#' },
+        { name: 'Blog', link: '/blog' }
+      ]
+    },
+    { 
+      title: 'Community', 
+      items: [
+        { name: 'GitHub', link: 'https://github.com/ayanpandit/AppUi' },
+        { name: 'Discord', link: '#' },
+        { name: 'Twitter', link: 'https://twitter.com/ayanpandit_31' }
+      ]
+    },
   ];
 
   const socialLinks = [
@@ -62,10 +88,18 @@ export default function Footer() {
                 {section.items.map((item, itemIdx) => (
                   <li key={itemIdx}>
                     <a
-                      href="#"
-                      className="text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1 group"
+                      href={item.link.startsWith('http') ? item.link : '#'}
+                      onClick={(e) => {
+                        if (!item.link.startsWith('http') && item.link !== '#') {
+                          e.preventDefault();
+                          navigate(item.link);
+                        }
+                      }}
+                      className="text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1 group cursor-pointer"
+                      target={item.link.startsWith('http') ? '_blank' : undefined}
+                      rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
                     >
-                      <span>{item}</span>
+                      <span>{item.name}</span>
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                     </a>
                   </li>
@@ -117,8 +151,20 @@ export default function Footer() {
               </a>
             </div>
             <div className="flex items-center gap-6">
-              <a href="#" className="hover:text-purple-400 transition-colors">Privacy</a>
-              <a href="#" className="hover:text-purple-400 transition-colors">Terms</a>
+              <a 
+                href="#" 
+                onClick={(e) => { e.preventDefault(); navigate('/privacy'); }}
+                className="hover:text-purple-400 transition-colors cursor-pointer"
+              >
+                Privacy
+              </a>
+              <a 
+                href="#" 
+                onClick={(e) => { e.preventDefault(); navigate('/terms'); }}
+                className="hover:text-purple-400 transition-colors cursor-pointer"
+              >
+                Terms
+              </a>
               <span className="flex items-center gap-2">
                 MIT License
                 <span className="px-2 py-0.5 bg-green-500/10 text-green-400 rounded text-xs border border-green-500/30">

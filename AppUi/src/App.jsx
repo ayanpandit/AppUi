@@ -7,6 +7,9 @@ import Footer from "./landing_page/footer";
 import PageDivider from "./components/page_divider";
 import ComponentSelect from "./components/component_select";
 import About from "./components/about";
+import PrivacyPolicy from "./components/privacypolicy";
+import TermsOfService from "./components/tos";
+import Blog from "./components/blog";
 
 function App() {
   return (
@@ -26,6 +29,9 @@ function App() {
   <Route path="/page_divider" element={<PageDivider />} />
   <Route path="/component_select" element={<ComponentSelect />} />
   <Route path="/about" element={<About />} />
+  <Route path="/privacy" element={<PrivacyPolicy />} />
+  <Route path="/terms" element={<TermsOfService />} />
+  <Route path="/blog" element={<Blog />} />
       </Routes>
     </HashRouter>
   );

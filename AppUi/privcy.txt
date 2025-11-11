@@ -1,0 +1,70 @@
+
+APP.UI - Privacy Policy
+=======================
+
+Last updated: November 11, 2025
+
+Introduction
+------------
+This Privacy Policy explains how APP.UI (the "Service"), and its maintainers collect, use, disclose, and protect information when you visit or interact with the website and related services. By using the Service you consent to the practices described in this policy.
+
+Information we collect
+----------------------
+1. Information you provide directly
+- Email address you enter when contacting us or using contact forms;
+- Any content or feedback you submit (e.g., issue reports, suggestions, or code snippets you share).
+
+2. Automatically collected information
+- Usage data (pages visited, interactions, timestamps) collected by server logs or analytics tools to help improve the Service;
+- Browser and device information (user agent, screen size, language, timezone);
+- IP addresses (may be used for geolocation, rate limiting, or security purposes).
+
+3. Third-party data
+- If you choose to sign in or interact through third-party services (for example, GitHub), those services may provide information to the Service according to their APIs and your consent. The Service itself does not implement account-based sign-in by default; check the repository or feature pages for third-party integrations.
+
+How we use information
+-----------------------
+We use collected information to:
+- Provide, operate, and maintain the Service;
+- Improve and personalize the Service experience;
+- Respond to inquiries and communications;
+- Monitor, analyze, and improve site performance and security;
+- Detect and prevent fraud, abuse, or security incidents.
+
+Cookies and tracking
+--------------------
+The Service may use cookies or third-party tracking technologies (such as analytics providers) to collect usage information. Cookies are small data files stored on your device. You can control cookies through your browser settings.
+
+Third-party services
+--------------------
+We may use third-party services (analytics providers, hosting/CDN, embedded content providers like Spline) that collect information about your use of the Service. Those providers have their own privacy policies — please review them if you are concerned about data collected by third-party modules.
+
+Data sharing and disclosure
+--------------------------
+We will not sell your personal information. We may disclose personal information when required by law or to protect the rights, property, or safety of the Service, its users, or the public.
+
+Data retention
+--------------
+We retain personal data only as long as necessary to fulfill the purposes described in this policy or as required by law. Usage logs may be retained for operational and security needs.
+
+Security
+--------
+We take reasonable measures to protect personal information from unauthorized access, disclosure, or destruction. However, no transmission or storage is 100% secure — please use caution when sharing sensitive information.
+
+Children's privacy
+------------------
+The Service is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected such information, contact us to request deletion.
+
+Your rights
+-----------
+Depending on your jurisdiction, you may have rights to access, correct, or delete personal information we hold about you. To exercise these rights, contact us at the address below.
+
+Changes to this policy
+----------------------
+We may update this Privacy Policy. We will post changes here and update the "Last updated" date.
+
+Contact information
+-------------------
+Questions, requests, or concerns: aayanpandey8528@gmail.com
+
+
