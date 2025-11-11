@@ -1,7 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import logo from '../assets/logo.png';
 import Footer from '../landing_page/footer';
 
+
 export default function Aboutus() {
+  const navigate = useNavigate();
 
 
   return (
@@ -10,9 +14,12 @@ export default function Aboutus() {
       <div className="px-8 py-8 border-b border-gray-800">
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
-            <h1 className="text-[80px] font-bold leading-none tracking-tight mb-4">
-              ABOUT APP.UI
-            </h1>
+            <div className="flex items-center gap-4 mb-2 cursor-pointer" onClick={() => navigate('/') }>
+              <img src={logo} alt="APP.UI Logo" className="w-16 h-16" />
+              <h1 className="text-[80px] font-bold leading-none tracking-tight">
+                ABOUT APP.UI
+              </h1>
+            </div>
             <p className="text-white text-base tracking-wide">
               AN OPEN-SOURCE{' '}
               <span className="font-semibold">UI COMPONENT LIBRARY</span> FOR MODERN{' '}
@@ -24,7 +31,6 @@ export default function Aboutus() {
           <div className="flex items-center gap-3 mt-4">
             <div className="w-3 h-3 rounded-full bg-[#c4ff0e]"></div>
             <button className="px-6 py-2.5 bg-[#c4ff0e] text-black text-xs font-bold tracking-wider uppercase rounded-sm hover:bg-[#d4ff3e] transition-colors">
-
               BROWSE COMPONENTS
             </button>
           </div>
