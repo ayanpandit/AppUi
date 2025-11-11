@@ -4,7 +4,7 @@ import { Copy, Check, Sun, Moon } from 'lucide-react';
 export default function MainArea({ selectedComponent }) {
   const [copied, setCopied] = useState(false);
   const [previewBg, setPreviewBg] = useState('white');
-  const [previewWidth, setPreviewWidth] = useState(1440);
+  const [previewWidth, setPreviewWidth] = useState(1500);
   const containerRef = useRef(null);
   const [scale, setScale] = useState(1);
 
@@ -35,10 +35,8 @@ export default function MainArea({ selectedComponent }) {
     return () => window.removeEventListener('resize', updateScale);
   }, [previewWidth]);
 
-  const resetToLaptop = () => setPreviewWidth(1440);
+  const resetToLaptop = () => setPreviewWidth(1500);
   const setToFullHD = () => setPreviewWidth(1600);
-  const setToTablet = () => setPreviewWidth(768);
-  const setToMobile = () => setPreviewWidth(375);
 
   if (!selectedComponent) {
     return (
@@ -58,9 +56,7 @@ export default function MainArea({ selectedComponent }) {
           <h3 className="text-white font-bold text-sm md:text-base tracking-wider uppercase">[ Preview ]</h3>
           <div className="flex items-center gap-2 flex-wrap">
             <span className="text-white/60 text-xs font-mono">{previewWidth}px</span>
-            <button onClick={setToMobile} className="px-3 py-1 text-xs bg-white/10 text-white hover:bg-white/20 rounded transition-colors" title="Mobile (375px)">📱</button>
-            <button onClick={setToTablet} className="px-3 py-1 text-xs bg-white/10 text-white hover:bg-white/20 rounded transition-colors" title="Tablet (768px)">📱</button>
-            <button onClick={resetToLaptop} className="px-3 py-1 text-xs bg-white/10 text-white hover:bg-white/20 rounded transition-colors" title="Laptop (1440px)">💻</button>
+            <button onClick={resetToLaptop} className="px-3 py-1 text-xs bg-white/10 text-white hover:bg-white/20 rounded transition-colors" title="Laptop (1500px)">💻</button>
             <button onClick={setToFullHD} className="px-3 py-1 text-xs bg-white/10 text-white hover:bg-white/20 rounded transition-colors" title="Desktop (1600px)">🖥️</button>
             <div className="w-px h-6 bg-white/20"></div>
             <button onClick={() => setPreviewBg('white')} className={`p-2 rounded transition-colors ${previewBg === 'white' ? 'bg-white text-black' : 'bg-white/10 text-white hover:bg-white/20'}`} title="Light"><Sun size={16} /></button>
@@ -93,6 +89,7 @@ export default function MainArea({ selectedComponent }) {
               <div 
                 style={{ 
                   width: `${previewWidth}px`,
+                  minHeight: '600px',
                   maxHeight: '80vh',
                   overflowY: 'auto',
                   overflowX: 'hidden'
