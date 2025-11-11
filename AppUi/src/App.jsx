@@ -1,4 +1,4 @@
-/*import React from "react";
+import React from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import HeroSection from "./landing_page/hero";
 import AboutSection from "./landing_page/aboutsection";
@@ -36,9 +36,10 @@ function App() {
     </HashRouter>
   );
 }
-export default App;*/
-
-import SimpleNavbar from "./components/test";
+export default App;
+/*
+import EcoNavbar from "./components/test";
 export default function App() {
-  return <SimpleNavbar />;
+  return <EcoNavbar />;
 }
+*/
