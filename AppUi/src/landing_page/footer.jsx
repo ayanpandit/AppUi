@@ -11,10 +11,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: '#', label: 'Email' },
+    { icon: Github, href: 'https://github.com/ayanpandit', label: 'GitHub' },
+    { icon: Twitter, href: 'https://twitter.com/ayanpandit_31', label: 'Twitter' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/ayan-pandey-b66067296', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:aayanpandey8528@gmail.com', label: 'Email' },
   ];
 
   return (
@@ -43,6 +43,8 @@ export default function Footer() {
                   href={social.href}
                   aria-label={social.label}
                   className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center hover:border-purple-500 hover:bg-purple-500/10 transition-all"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <social.icon className="w-4 h-4 text-gray-400 hover:text-purple-400 transition-colors" />
                 </a>

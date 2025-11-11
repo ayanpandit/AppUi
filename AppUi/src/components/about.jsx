@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../landing_page/footer';
 
 export default function Aboutus() {
 
@@ -30,97 +31,126 @@ export default function Aboutus() {
         </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-[1400px] mx-auto px-8 py-16">
-        <div className="grid grid-cols-2 gap-16">
-          {/* Left Side - Image */}
-          <div className="relative">
+      {/* Main Content - 5 alternating blocks */}
+      <div className="max-w-[1400px] mx-auto px-8 py-16 space-y-24">
+        {/* Block 1: Image Left, Content Right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Image Left */}
+          <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=1374&auto=format&fit=crop"
                 alt="About App.UI"
-                className="w-full h-[700px] object-cover rounded-lg"
+                className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
-
             </div>
           </div>
+          {/* Content Right */}
+          <div className="order-2 md:order-2">
+            <h2 className="text-2xl font-bold mb-4">[ ABOUT APP.UI ]</h2>
+            <p className="text-base leading-relaxed mb-6">
+              App.UI is an open-source UI component library created by developer Ayan Pandey.
+              It provides ready-to-use, copy-paste UI components for modern frontend developers
+              using React and Tailwind CSS. Our mission is to make building beautiful websites
+              faster and easier by offering prebuilt UI blocks in one comprehensive library.
+            </p>
+          </div>
+        </div>
 
-          {/* Right Side - Content */}
-          <div>
-            {/* About Section */}
-            <div className="mb-16">
-              <div className="flex items-center gap-4 mb-8">
-                <h2 className="text-xl font-bold tracking-wide">[ ABOUT APP.UI ]</h2>
-                <div className="w-12 h-12 rounded-full border-2 border-white flex items-center justify-center">
-                  <svg
-                    className="w-6 h-6"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 14l-7 7m0 0l-7-7m7 7V3"
-                    />
-                  </svg>
-                </div>
-              </div>
-
-              <p className="text-base leading-relaxed mb-6">
-                App.UI is an open-source UI component library created by developer Ayan Pandey.
-                It provides ready-to-use, copy-paste UI components for modern frontend developers
-                using React and Tailwind CSS. Our mission is to make building beautiful websites
-                faster and easier by offering prebuilt UI blocks in one comprehensive library.
-              </p>
-            </div>
-
-            {/* Features Section */}
-            <div className="mb-16">
-
-            </div>
-
-            {/* Mission Section */}
-            <div>
-              <h2 className="text-xl font-bold tracking-wide mb-6">[ OUR MISSION ]</h2>
-              <p className="text-base leading-relaxed">
-                To empower frontend developers, web designers, students, freelancers, and indie makers
-                by providing a comprehensive collection of high-quality, customizable UI components.
-                We believe in the power of open-source collaboration to accelerate web development and
-                create stunning user experiences.
-              </p>
-            </div>
-
-            {/* Platform Details */}
-            <div className="mt-12 space-y-8">
-              <div>
-                <h3 className="text-sm font-bold tracking-wider mb-4 text-gray-400">
-                  WHAT WE OFFER
-                </h3>
-                <p className="text-base leading-relaxed">
-                  Our library includes essential UI components like navigation bars, hero sections,
-                  feature sections, call-to-action blocks, testimonials, pricing cards, dashboards,
-                  sidebars, and footers — all built with React and styled with Tailwind CSS for
-                  maximum flexibility and performance.
-                </p>
-              </div>
-
-              <div>
-
-              </div>
-
-              <div className="pt-6 border-t border-gray-800">
-                <p className="text-sm leading-relaxed text-gray-300 italic">
-                  Every component is designed with modern best practices, accessibility in mind,
-                  and full customization options. Simply copy, paste, and adapt to your project's
-                  needs — no complex setup required.
-                </p>
-              </div>
+        {/* Block 2: Content Left, Image Right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Content Left */}
+          <div className="order-2 md:order-1">
+            <h2 className="text-2xl font-bold mb-4">[ OUR MISSION ]</h2>
+            <p className="text-base leading-relaxed mb-6">
+              To empower frontend developers, web designers, students, freelancers, and indie makers
+              by providing a comprehensive collection of high-quality, customizable UI components.
+              We believe in the power of open-source collaboration to accelerate web development and
+              create stunning user experiences.
+            </p>
+          </div>
+          {/* Image Right */}
+          <div className="relative order-1 md:order-2">
+            <div className="sticky top-8">
+              <img
+                src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1374&auto=format&fit=crop"
+                alt="Our Mission"
+                className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
+              />
             </div>
           </div>
         </div>
+
+        {/* Block 3: Image Left, Content Right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Image Left */}
+          <div className="relative order-1 md:order-1">
+            <div className="sticky top-8">
+              <img
+                src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1374&auto=format&fit=crop"
+                alt="What We Offer"
+                className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
+              />
+            </div>
+          </div>
+          {/* Content Right */}
+          <div className="order-2 md:order-2">
+            <h2 className="text-2xl font-bold mb-4">[ WHAT WE OFFER ]</h2>
+            <p className="text-base leading-relaxed mb-6">
+              Our library includes essential UI components like navigation bars, hero sections,
+              feature sections, call-to-action blocks, testimonials, pricing cards, dashboards,
+              sidebars, and footers — all built with React and styled with Tailwind CSS for
+              maximum flexibility and performance.
+            </p>
+          </div>
+        </div>
+
+        {/* Block 4: Content Left, Image Right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Content Left */}
+          <div className="order-2 md:order-1">
+            <h2 className="text-2xl font-bold mb-4">[ DESIGN PHILOSOPHY ]</h2>
+            <p className="text-base leading-relaxed mb-6">
+              Every component is designed with modern best practices, accessibility in mind,
+              and full customization options. Simply copy, paste, and adapt to your project's
+              needs — no complex setup required.
+            </p>
+          </div>
+          {/* Image Right */}
+          <div className="relative order-1 md:order-2">
+            <div className="sticky top-8">
+              <img
+                src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1374&auto=format&fit=crop"
+                alt="Design Philosophy"
+                className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Block 5: Image Left, Content Right */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          {/* Image Left */}
+          <div className="relative order-1 md:order-1">
+            <div className="sticky top-8">
+              <img
+                src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?q=80&w=1374&auto=format&fit=crop"
+                alt="Open Source"
+                className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
+              />
+            </div>
+          </div>
+          {/* Content Right */}
+          <div className="order-2 md:order-2">
+            <h2 className="text-2xl font-bold mb-4">[ OPEN SOURCE SPIRIT ]</h2>
+            <p className="text-base leading-relaxed mb-6">
+              We believe in the power of open-source collaboration to accelerate web development and
+              create stunning user experiences. Join our community and contribute to the future of UI design!
+            </p>
+          </div>
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }
