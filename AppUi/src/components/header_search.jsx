@@ -49,10 +49,20 @@ export default function HeaderSearch({ onSearch }) {
 
       {/* Right side - can add navigation links here */}
       <div className="flex items-center gap-6">
-        <a href="#" className="text-white/90 text-sm font-medium hover:text-white transition-colors">
+        <a
+          href="#"
+          className="text-white/90 text-sm font-medium hover:text-white transition-colors"
+          onClick={(e) => { e.preventDefault(); navigate('/about'); }}
+          style={{ cursor: 'pointer' }}
+        >
           About us
         </a>
-        <a href="#" className="text-white/90 text-sm font-medium hover:text-white transition-colors">
+        <a
+          href="#"
+          className="text-white/90 text-sm font-medium hover:text-white transition-colors"
+          onClick={(e) => { e.preventDefault(); navigate('/component_select'); }}
+          style={{ cursor: 'pointer' }}
+        >
           Browse Components
         </a>
       </div>

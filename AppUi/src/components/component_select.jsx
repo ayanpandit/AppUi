@@ -4,6 +4,7 @@ import Footer from '../landing_page/footer';
 import SearchBar from './header_search';
 import componentSelectBg from '../assets/component_selectbg.jpg';
 
+export default function ComponentSelect() {
   const navigate = useNavigate();
 
   const handleCategoryClick = (category) => {
@@ -13,14 +14,6 @@ import componentSelectBg from '../assets/component_selectbg.jpg';
   return (
     <div className="min-h-screen bg-black">
       <SearchBar onSearch={(query) => console.log('Search:', query)} />
-      <div className="flex justify-end max-w-7xl mx-auto mb-4">
-        <button
-          className="px-4 py-2 bg-white/10 text-white rounded hover:bg-white/20 transition-colors text-xs font-bold tracking-wider uppercase"
-          onClick={() => navigate('/about')}
-        >
-          About Us
-        </button>
-      </div>
       <div className="p-4 md:p-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 max-w-7xl mx-auto">
         

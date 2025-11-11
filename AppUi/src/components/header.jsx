@@ -44,7 +44,12 @@ export default function Header({ onToggleSidebar, componentName }) {
         >
           Home
         </button>
-        <a href="#" className="text-white/90 text-xs font-bold tracking-wider uppercase hover:text-white transition-colors">
+        <a
+          href="#"
+          className="text-white/90 text-xs font-bold tracking-wider uppercase hover:text-white transition-colors"
+          onClick={(e) => { e.preventDefault(); navigate('/about'); }}
+          style={{ cursor: 'pointer' }}
+        >
           About
         </a>
         <button
