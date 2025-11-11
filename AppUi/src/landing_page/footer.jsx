@@ -93,6 +93,8 @@ export default function Footer() {
                         if (!item.link.startsWith('http') && item.link !== '#') {
                           e.preventDefault();
                           navigate(item.link);
+                          // always scroll to top 
+                          try { window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); } catch (err) { /* ignore */ }
                         }
                       }}
                       className="text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1 group cursor-pointer"
@@ -153,14 +155,14 @@ export default function Footer() {
             <div className="flex items-center gap-6">
               <a 
                 href="#" 
-                onClick={(e) => { e.preventDefault(); navigate('/privacy'); }}
+                onClick={(e) => { e.preventDefault(); navigate('/privacy'); try { window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); } catch (err) {} }}
                 className="hover:text-purple-400 transition-colors cursor-pointer"
               >
                 Privacy
               </a>
               <a 
                 href="#" 
-                onClick={(e) => { e.preventDefault(); navigate('/terms'); }}
+                onClick={(e) => { e.preventDefault(); navigate('/terms'); try { window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); } catch (err) {} }}
                 className="hover:text-purple-400 transition-colors cursor-pointer"
               >
                 Terms
