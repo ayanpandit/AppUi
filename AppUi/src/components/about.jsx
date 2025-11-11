@@ -78,39 +78,7 @@ export default function Aboutus() {
 
             {/* Features Section */}
             <div className="mb-16">
-              <h3 className="text-sm font-bold tracking-wider mb-8">
-                FEATURED IN DEVELOPER COMMUNITIES
-              </h3>
 
-              <div className="space-y-0">
-                {features.map((feature, index) => (
-                  <div
-                    key={index}
-                    className="group border-t border-gray-800 py-6 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors px-4 -mx-4"
-                  >
-                    <span className="text-sm font-medium tracking-wide">
-                      {feature.title}
-                    </span>
-                    <div className="flex items-center gap-4">
-                      <span className="text-sm text-gray-400">{feature.year}</span>
-                      <svg
-                        className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                    </div>
-                  </div>
-                ))}
-                <div className="border-t border-gray-800"></div>
-              </div>
             </div>
 
             {/* Mission Section */}
