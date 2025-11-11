@@ -54,7 +54,12 @@ export default function HeroSection() {
 
           {/* Navigation Menu */}
           <div className="flex items-center gap-8" style={{ pointerEvents: "auto" }}>
-            <a href="#" className="text-white/90 text-sm font-medium hover:text-white transition-colors">
+            <a
+              href="#"
+              className="text-white/90 text-sm font-medium hover:text-white transition-colors"
+              onClick={e => { e.preventDefault(); window.location.hash = '#/about'; }}
+              style={{ cursor: 'pointer' }}
+            >
               About us
             </a>
             <a
