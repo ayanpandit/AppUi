@@ -14,7 +14,7 @@ export default function Footer() {
     { icon: Github, href: 'https://github.com/ayanpandit', label: 'GitHub' },
     { icon: Twitter, href: 'https://twitter.com/ayanpandit_31', label: 'Twitter' },
     { icon: Linkedin, href: 'https://linkedin.com/in/ayan-pandey-b66067296', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:aayanpandey8528@gmail.com', label: 'Email' },
+  { icon: Mail, href: 'https://mail.google.com/mail/?view=cm&fs=1&to=aayanpandey8528@gmail.com', label: 'Email' },
   ];
 
   return (
