@@ -2,7 +2,7 @@
 import Navbar1 from '../ui/navbar/navbar1';
 import navbar1Code from '../ui/navbar/code/navbar1.txt?raw';
 import EcoNavbar from '../ui/navbar/EcoNavbar.jsx';
-import EcoNavbarCode from '../ui/navbar/code/EcoNavbar.txt';
+import EcoNavbarCode from '../ui/navbar/code/EcoNavbar.txt?raw';
 
 export const navbarComponents = [
   {
