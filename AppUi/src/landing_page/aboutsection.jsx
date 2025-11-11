@@ -1,6 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function AboutSection() {
+  const navigate = useNavigate();
   const features = [
     {
       title: "OPEN SOURCE RECOGNITION",
@@ -43,8 +45,10 @@ export default function AboutSection() {
           </div>
           <div className="flex items-center gap-3 mt-4">
             <div className="w-3 h-3 rounded-full bg-[#c4ff0e]"></div>
-            <button className="px-6 py-2.5 bg-[#c4ff0e] text-black text-xs font-bold tracking-wider uppercase rounded-sm hover:bg-[#d4ff3e] transition-colors">
-
+            <button
+              className="px-6 py-2.5 bg-[#c4ff0e] text-black text-xs font-bold tracking-wider uppercase rounded-sm hover:bg-[#d4ff3e] transition-colors"
+              onClick={() => navigate('/component_select')}
+            >
               BROWSE COMPONENTS
             </button>
           </div>
