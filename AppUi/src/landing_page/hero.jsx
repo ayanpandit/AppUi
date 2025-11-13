@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { motion, useScroll, useTransform } from "framer-motion";
 import Spline from "@splinetool/react-spline";
 import sideBackImage from "../assets/side_back.png";
 
@@ -7,6 +8,16 @@ export default function HeroSection() {
   const navigate = useNavigate();
   const [time, setTime] = useState("");
   const [country, setCountry] = useState("...");
+  const heroRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["start start", "end start"]
+  });
+
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.2]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   useEffect(() => {
     // Update time every 50ms for ms precision
@@ -32,16 +43,37 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <div style={{ width: "100vw", height: "100vh", overflow: "hidden", position: "relative" }}>
+    <div ref={heroRef} style={{ width: "100vw", height: "100vh", overflow: "hidden", position: "relative" }}>
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Chela+One&family=Norican&family=Pompiere&family=Varela+Round&display=swap');
       </style>
-      <Spline scene="https://my.spline.design/cybermannequin-GlCTzwPSJUpWxSIXfb6qxuqj/scene.splinecode" />
+      
+      <motion.div 
+        style={{ 
+          scale,
+          width: "100%",
+          height: "100%",
+          position: "absolute",
+          top: 0,
+          left: 0
+        }}
+      >
+        <Spline scene="https://my.spline.design/cybermannequin-GlCTzwPSJUpWxSIXfb6qxuqj/scene.splinecode" />
+      </motion.div>
 
-      {/* Sidebar removed */}
-
-      {/* UI Overlay - Completely transparent to mouse events except specific elements */}
-      <div style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", pointerEvents: "none" }}>
+      {/* UI Overlay */}
+      <motion.div 
+        style={{ 
+          position: "absolute", 
+          top: 0, 
+          left: 0, 
+          width: "100%", 
+          height: "100%", 
+          pointerEvents: "none",
+          opacity,
+          y
+        }}
+      >
         {/* Navigation Bar */}
         <nav className="flex items-center justify-between px-8 py-6" style={{ pointerEvents: "none" }}>
           {/* Logo */}
@@ -75,7 +107,13 @@ export default function HeroSection() {
         </nav>
 
         {/* Hero Content */}
-        <div className="flex flex-col justify-between px-8 pb-12" style={{ height: "calc(100vh - 88px)", pointerEvents: "none" }}>
+        <motion.div 
+          className="flex flex-col justify-between px-8 pb-12" 
+          style={{ height: "calc(100vh - 88px)", pointerEvents: "none" }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.3 }}
+        >
           {/* Main Headline - Positioned Lower */}
           <div className="pt-48" style={{ pointerEvents: "auto", maxWidth: "fit-content" }}>
             <h1 className="text-white font-normal tracking-tight" style={{ fontSize: '3.5rem', lineHeight: '1.15', fontWeight: '400', letterSpacing: '-0.02em', fontFamily: 'Anton, sans-serif' }}>
@@ -138,8 +176,8 @@ export default function HeroSection() {
               </p>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 }

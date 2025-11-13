@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Github, Twitter, Linkedin, Mail, Code2, ArrowUpRight } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import image from '../assets/footer.png';
 import logo from '../assets/logo.png';
 
 export default function Footer() {
   const navigate = useNavigate();
+  const footerRef = useRef(null);
+  
+  // Scroll animations for footer reveal
+  const { scrollYProgress } = useScroll({
+    target: footerRef,
+    offset: ["start end", "end end"]
+  });
+  
+  const footerY = useTransform(scrollYProgress, [0, 0.5], [100, 0]);
+  const footerOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+  const brandScale = useTransform(scrollYProgress, [0, 0.4], [0.9, 1]);
+  const feedbackY = useTransform(scrollYProgress, [0, 0.6], [50, 0]);
 
   const navLinks = [
     { 
@@ -44,15 +57,21 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-black text-white">
-      <div className="max-w-7xl mx-auto px-6 py-16">
+    <footer ref={footerRef} className="bg-black text-white">
+      <motion.div 
+        className="max-w-7xl mx-auto px-6 py-16"
+        style={{ y: footerY, opacity: footerOpacity }}
+      >
         {/* Top border */}
         <div className="h-px bg-white mb-12"></div>
 
         {/* Main content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand section */}
-          <div className="lg:col-span-2">
+          <motion.div 
+            className="lg:col-span-2"
+            style={{ scale: brandScale }}
+          >
             <div className="flex items-center gap-2 mb-4">
               <img src={logo} alt="Logo" className="w-8 h-8" />
               <span className="text-2xl font-bold text-white">
@@ -76,11 +95,17 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-          </div>
+          </motion.div>
 
           {/* Navigation links */}
           {navLinks.map((section, idx) => (
-            <div key={idx}>
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5, delay: idx * 0.1, ease: "easeOut" }}
+            >
               <h3 className="text-sm font-semibold mb-4 text-white">
                 {section.title}
               </h3>
@@ -107,12 +132,22 @@ export default function Footer() {
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Feedback section */}
-        <div className="mb-12 p-6 rounded-xl border border-white/20 bg-cover bg-center" style={{ backgroundImage: `url(${image})` }}>
+        <motion.div 
+          className="mb-12 p-6 rounded-xl border border-white/20 bg-cover bg-center" 
+          style={{ 
+            backgroundImage: `url(${image})`,
+            y: feedbackY
+          }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <div className="flex flex-col gap-6">
             <div>
               <h3 className="text-lg font-bold mb-1">Feedback</h3>
@@ -141,7 +176,7 @@ export default function Footer() {
               </button>
             </form>
           </div>
-        </div>
+        </motion.div>
 
         {/* Bottom section */}
         <div className="pt-8 border-t border-white/10">
@@ -176,7 +211,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

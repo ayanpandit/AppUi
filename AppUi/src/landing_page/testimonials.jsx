@@ -1,40 +1,63 @@
 import { useEffect, useState, useRef } from 'react';
-import { motion, useMotionValue, useTransform } from 'motion/react';
+import { motion, useMotionValue, useTransform, useScroll } from 'motion/react';
 // replace icons with your own if needed
 import { FiCircle, FiCode, FiFileText, FiLayers, FiLayout } from 'react-icons/fi';
 
 // Wrapper component for easy usage
 export function Testimonials() {
+  const sectionRef = useRef(null);
+  
+  // Scroll animations for the section
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end start"]
+  });
+  
+  const titleY = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
+  const titleOpacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+  const carouselScale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.8, 1, 1, 0.95]);
+  const carouselY = useTransform(scrollYProgress, [0, 0.3], [80, 0]);
+  
   return (
-    <div style={{ 
-      height: '800px', 
-      position: 'relative', 
-      display: 'flex', 
-      flexDirection: 'column',
-      alignItems: 'center', 
-      justifyContent: 'center',
-      background: '#000000'
-    }}>
+    <div 
+      ref={sectionRef}
+      style={{ 
+        height: '800px', 
+        position: 'relative', 
+        display: 'flex', 
+        flexDirection: 'column',
+        alignItems: 'center', 
+        justifyContent: 'center',
+        background: '#000000'
+      }}>
       <style>
         @import url('https://fonts.googleapis.com/css2?family=Anton&family=Chela+One&family=Norican&family=Pompiere&family=Varela+Round&display=swap');
       </style>
-      <h2 style={{
-        fontFamily: 'Anton, sans-serif',
-        fontSize: '4rem',
-        color: 'white',
-        textAlign: 'center',
-        marginBottom: '0.5rem',
-        textShadow: '2px 2px 0px #000, 4px 4px 0px #333, 6px 6px 10px rgba(0,0,0,0.5)',
-        letterSpacing: '2px'
-      }}>
+      <motion.h2 
+        style={{
+          fontFamily: 'Anton, sans-serif',
+          fontSize: '4rem',
+          color: 'white',
+          textAlign: 'center',
+          marginBottom: '0.5rem',
+          textShadow: '2px 2px 0px #000, 4px 4px 0px #333, 6px 6px 10px rgba(0,0,0,0.5)',
+          letterSpacing: '2px',
+          y: titleY,
+          opacity: titleOpacity
+        }}
+      >
         Loved by Developers
-      </h2>
-      <div style={{
-        padding: '2px',
-        borderRadius: '50%',
-        background: 'linear-gradient(45deg, #ffffff, #888888)',
-        boxShadow: '0 0 50px rgba(0,0,0,0.8), 0 0 100px rgba(255,255,255,0.1), inset 0 0 50px rgba(0,0,0,0.5)'
-      }}>
+      </motion.h2>
+      <motion.div 
+        style={{
+          padding: '2px',
+          borderRadius: '50%',
+          background: 'linear-gradient(45deg, #ffffff, #888888)',
+          boxShadow: '0 0 50px rgba(0,0,0,0.8), 0 0 100px rgba(255,255,255,0.1), inset 0 0 50px rgba(0,0,0,0.5)',
+          scale: carouselScale,
+          y: carouselY
+        }}
+      >
         <Carousel
           baseWidth={500}
           autoplay={true}
@@ -43,7 +66,7 @@ export function Testimonials() {
           loop={true}
           round={true}
         />
-      </div>
+      </motion.div>
     </div>
   );
 }

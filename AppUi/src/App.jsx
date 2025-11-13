@@ -10,6 +10,7 @@ import About from "./components/about";
 import PrivacyPolicy from "./components/privacypolicy";
 import TermsOfService from "./components/tos";
 import Blog from "./components/blog";
+import SmoothScroll from "./components/SmoothScroll";
 
 function App() {
   return (
@@ -18,12 +19,12 @@ function App() {
         <Route
           path="/"
           element={
-            <>
+            <SmoothScroll>
               <HeroSection />
               <AboutSection />
               <Testimonials />
               <Footer />
-            </>
+            </SmoothScroll>
           }
         />
   <Route path="/page_divider" element={<PageDivider />} />
