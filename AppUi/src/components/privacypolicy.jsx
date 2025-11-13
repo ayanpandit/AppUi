@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import logo from '../assets/logo.png';
 import Footer from '../landing_page/footer';
 
 export default function PrivacyPolicy() {
   const navigate = useNavigate();
+  const pageRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: pageRef,
+    offset: ["start start", "end end"]
+  });
+  
+  const headerY = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div ref={pageRef} className="min-h-screen bg-black text-white">
       {/* Header */}
-      <div className="px-8 py-8 border-b border-gray-800">
+      <motion.div 
+        className="px-8 py-8 border-b border-gray-800"
+        style={{ y: headerY, opacity: headerOpacity }}
+      >
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
             <div className="flex items-center gap-4 mb-2 cursor-pointer" onClick={() => navigate('/')}>
@@ -33,12 +46,18 @@ export default function PrivacyPolicy() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Content - Privacy Policy Sections */}
       <div className="max-w-[1400px] mx-auto px-8 py-16 space-y-24">
         {/* Introduction Block */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
               <img
@@ -54,10 +73,16 @@ export default function PrivacyPolicy() {
               This Privacy Policy explains how APP.UI (the "Service"), and its maintainers collect, use, disclose, and protect information when you visit or interact with the website and related services. By using the Service you consent to the practices described in this policy.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Information We Collect Block */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="order-2 md:order-1">
             <h2 className="text-2xl font-bold mb-4">[ INFORMATION WE COLLECT ]</h2>
             <div className="text-base leading-relaxed space-y-4">
@@ -84,10 +109,16 @@ export default function PrivacyPolicy() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* How We Use Information Block */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
               <img
@@ -103,10 +134,16 @@ export default function PrivacyPolicy() {
               We use collected information to provide, operate, and maintain the Service; improve and personalize the experience; respond to inquiries; monitor and improve site performance and security; detect and prevent fraud, abuse, or security incidents.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Cookies and Tracking Block */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="order-2 md:order-1">
             <h2 className="text-2xl font-bold mb-4">[ COOKIES AND TRACKING ]</h2>
             <p className="text-base leading-relaxed mb-6">
@@ -122,10 +159,16 @@ export default function PrivacyPolicy() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Data Security and Your Rights Block */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
               <img
@@ -146,7 +189,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <Footer />
     </div>

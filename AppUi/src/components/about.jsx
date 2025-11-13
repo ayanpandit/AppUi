@@ -1,17 +1,29 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import logo from '../assets/logo.png';
 import Footer from '../landing_page/footer';
 
 
 export default function Aboutus() {
   const navigate = useNavigate();
-
+  const pageRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: pageRef,
+    offset: ["start start", "end end"]
+  });
+  
+  const headerY = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div ref={pageRef} className="min-h-screen bg-black text-white">
       {/* Header */}
-      <div className="px-8 py-8 border-b border-gray-800">
+      <motion.div 
+        className="px-8 py-8 border-b border-gray-800"
+        style={{ y: headerY, opacity: headerOpacity }}
+      >
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
             <div className="flex items-center gap-4 mb-2 cursor-pointer" onClick={() => navigate('/') }>
@@ -38,12 +50,18 @@ export default function Aboutus() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Content - 5 alternating blocks */}
       <div className="max-w-[1400px] mx-auto px-8 py-16 space-y-24">
         {/* Block 1: Image Left, Content Right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Image Left */}
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
@@ -64,10 +82,16 @@ export default function Aboutus() {
               faster and easier by offering prebuilt UI blocks in one comprehensive library.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Block 2: Content Left, Image Right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Content Left */}
           <div className="order-2 md:order-1">
             <h2 className="text-2xl font-bold mb-4">[ OUR MISSION ]</h2>
@@ -88,10 +112,16 @@ export default function Aboutus() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Block 3: Image Left, Content Right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Image Left */}
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
@@ -112,10 +142,16 @@ export default function Aboutus() {
               maximum flexibility and performance.
             </p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Block 4: Content Left, Image Right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Content Left */}
           <div className="order-2 md:order-1">
             <h2 className="text-2xl font-bold mb-4">[ DESIGN PHILOSOPHY ]</h2>
@@ -135,10 +171,16 @@ export default function Aboutus() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Block 5: Image Left, Content Right */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           {/* Image Left */}
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
@@ -157,7 +199,7 @@ export default function Aboutus() {
               create stunning user experiences. Join our community and contribute to the future of UI design!
             </p>
           </div>
-        </div>
+        </motion.div>
       </div>
       <Footer />
     </div>

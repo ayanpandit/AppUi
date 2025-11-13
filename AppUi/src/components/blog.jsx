@@ -1,15 +1,28 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import logo from '../assets/logo.png';
 import Footer from '../landing_page/footer';
 
 export default function Blog() {
   const navigate = useNavigate();
+  const pageRef = useRef(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: pageRef,
+    offset: ["start start", "end end"]
+  });
+  
+  const headerY = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div ref={pageRef} className="min-h-screen bg-black text-white">
       {/* Header */}
-      <div className="px-8 py-8 border-b border-gray-800">
+      <motion.div 
+        className="px-8 py-8 border-b border-gray-800"
+        style={{ y: headerY, opacity: headerOpacity }}
+      >
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
             <div className="flex items-center gap-4 mb-2 cursor-pointer" onClick={() => navigate('/')}>
@@ -36,12 +49,18 @@ export default function Blog() {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Main Content - Blog Articles */}
       <div className="max-w-[1400px] mx-auto px-8 py-16 space-y-24">
         {/* Article 1: Getting Started */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
               <img
@@ -64,10 +83,16 @@ export default function Blog() {
               READ MORE →
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Article 2: Component Customization */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="order-2 md:order-1">
             <div className="mb-3 flex items-center gap-3">
               <span className="text-xs font-bold text-[#c4ff0e]">GUIDE</span>
@@ -90,10 +115,16 @@ export default function Blog() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Article 3: Building Modern UIs */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
               <img
@@ -116,10 +147,16 @@ export default function Blog() {
               READ MORE →
             </button>
           </div>
-        </div>
+        </motion.div>
 
         {/* Article 4: React Best Practices */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="order-2 md:order-1">
             <div className="mb-3 flex items-center gap-3">
               <span className="text-xs font-bold text-[#c4ff0e]">DEVELOPMENT</span>
@@ -142,10 +179,16 @@ export default function Blog() {
               />
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Article 5: Contributing to Open Source */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <div className="relative order-1 md:order-1">
             <div className="sticky top-8">
               <img
@@ -168,7 +211,7 @@ export default function Blog() {
               READ MORE →
             </button>
           </div>
-        </div>
+        </motion.div>
       </div>
       <Footer />
     </div>
