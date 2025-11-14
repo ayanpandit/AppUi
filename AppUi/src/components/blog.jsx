@@ -13,15 +13,16 @@ export default function Blog() {
     offset: ["start start", "end end"]
   });
   
-  const headerY = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const headerY = useTransform(scrollYProgress, [0, 0.1], [0, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
 
   return (
     <div ref={pageRef} className="min-h-screen bg-black text-white">
       {/* Header */}
       <motion.div 
         className="px-8 py-8 border-b border-gray-800"
-        style={{ y: headerY, opacity: headerOpacity }}
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
       >
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
@@ -61,7 +62,13 @@ export default function Blog() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1374&auto=format&fit=crop"
@@ -69,7 +76,7 @@ export default function Blog() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <div className="mb-3 flex items-center gap-3">
               <span className="text-xs font-bold text-[#c4ff0e]">TUTORIAL</span>
@@ -106,7 +113,13 @@ export default function Blog() {
               READ MORE →
             </button>
           </div>
-          <div className="relative order-1 md:order-2">
+          <motion.div 
+            className="relative order-1 md:order-2"
+            initial={{ opacity: 0, x: 100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1374&auto=format&fit=crop"
@@ -114,7 +127,7 @@ export default function Blog() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Article 3: Building Modern UIs */}
@@ -125,7 +138,13 @@ export default function Blog() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1374&auto=format&fit=crop"
@@ -133,7 +152,7 @@ export default function Blog() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <div className="mb-3 flex items-center gap-3">
               <span className="text-xs font-bold text-[#c4ff0e]">DESIGN</span>
@@ -170,7 +189,13 @@ export default function Blog() {
               READ MORE →
             </button>
           </div>
-          <div className="relative order-1 md:order-2">
+          <motion.div 
+            className="relative order-1 md:order-2"
+            initial={{ opacity: 0, x: 100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?q=80&w=1374&auto=format&fit=crop"
@@ -178,7 +203,7 @@ export default function Blog() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Article 5: Contributing to Open Source */}
@@ -189,7 +214,13 @@ export default function Blog() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1374&auto=format&fit=crop"
@@ -197,7 +228,7 @@ export default function Blog() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <div className="mb-3 flex items-center gap-3">
               <span className="text-xs font-bold text-[#c4ff0e]">COMMUNITY</span>

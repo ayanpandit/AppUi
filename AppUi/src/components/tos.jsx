@@ -13,15 +13,16 @@ export default function TermsOfService() {
     offset: ["start start", "end end"]
   });
   
-  const headerY = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const headerY = useTransform(scrollYProgress, [0, 0.1], [0, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
 
   return (
     <div ref={pageRef} className="min-h-screen bg-black text-white">
       {/* Header */}
       <motion.div 
         className="px-8 py-8 border-b border-gray-800"
-        style={{ y: headerY, opacity: headerOpacity }}
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
       >
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
@@ -58,7 +59,13 @@ export default function TermsOfService() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?q=80&w=1374&auto=format&fit=crop"
@@ -66,7 +73,7 @@ export default function TermsOfService() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <h2 className="text-2xl font-bold mb-4">[ INTRODUCTION ]</h2>
             <p className="text-base leading-relaxed mb-6">
@@ -89,7 +96,13 @@ export default function TermsOfService() {
               The Service provides a curated collection of UI components, previews, and code snippets for educational and development purposes. All component source files, code snippets, and examples are provided "as-is" and may be subject to individual licenses found in the project's repository or accompanying files. Please check the repository and individual component code headers for licensing details before reuse.
             </p>
           </div>
-          <div className="relative order-1 md:order-2">
+          <motion.div 
+            className="relative order-1 md:order-2"
+            initial={{ opacity: 0, x: 100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=1374&auto=format&fit=crop"
@@ -97,7 +110,7 @@ export default function TermsOfService() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* User Conduct Block */}
@@ -108,7 +121,13 @@ export default function TermsOfService() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1374&auto=format&fit=crop"
@@ -116,7 +135,7 @@ export default function TermsOfService() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <h2 className="text-2xl font-bold mb-4">[ USER CONDUCT ]</h2>
             <div className="text-base leading-relaxed space-y-3">
@@ -145,7 +164,13 @@ export default function TermsOfService() {
               THE SERVICE IS PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. THE MAINTAINERS DISCLAIM ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THE PROJECT AND ITS COMPONENTS MAY NOT BE SUITABLE FOR PRODUCTION USE WITHOUT REVIEW, TESTING, AND ADAPTATION.
             </p>
           </div>
-          <div className="relative order-1 md:order-2">
+          <motion.div 
+            className="relative order-1 md:order-2"
+            initial={{ opacity: 0, x: 100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=1374&auto=format&fit=crop"
@@ -153,7 +178,7 @@ export default function TermsOfService() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Contact and Governing Law Block */}
@@ -164,7 +189,13 @@ export default function TermsOfService() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1374&auto=format&fit=crop"
@@ -172,7 +203,7 @@ export default function TermsOfService() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <h2 className="text-2xl font-bold mb-4">[ GOVERNING LAW & CONTACT ]</h2>
             <p className="text-base leading-relaxed mb-6">

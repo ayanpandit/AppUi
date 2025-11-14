@@ -13,15 +13,16 @@ export default function PrivacyPolicy() {
     offset: ["start start", "end end"]
   });
   
-  const headerY = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const headerY = useTransform(scrollYProgress, [0, 0.1], [0, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
 
   return (
     <div ref={pageRef} className="min-h-screen bg-black text-white">
       {/* Header */}
       <motion.div 
         className="px-8 py-8 border-b border-gray-800"
-        style={{ y: headerY, opacity: headerOpacity }}
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
       >
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
@@ -58,7 +59,13 @@ export default function PrivacyPolicy() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1374&auto=format&fit=crop"
@@ -66,7 +73,7 @@ export default function PrivacyPolicy() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <h2 className="text-2xl font-bold mb-4">[ INTRODUCTION ]</h2>
             <p className="text-base leading-relaxed mb-6">
@@ -100,7 +107,13 @@ export default function PrivacyPolicy() {
               </div>
             </div>
           </div>
-          <div className="relative order-1 md:order-2">
+          <motion.div 
+            className="relative order-1 md:order-2"
+            initial={{ opacity: 0, x: 100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1374&auto=format&fit=crop"
@@ -108,7 +121,7 @@ export default function PrivacyPolicy() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* How We Use Information Block */}
@@ -119,7 +132,13 @@ export default function PrivacyPolicy() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1374&auto=format&fit=crop"
@@ -127,7 +146,7 @@ export default function PrivacyPolicy() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <h2 className="text-2xl font-bold mb-4">[ HOW WE USE INFORMATION ]</h2>
             <p className="text-base leading-relaxed mb-6">
@@ -150,7 +169,13 @@ export default function PrivacyPolicy() {
               The Service may use cookies or third-party tracking technologies (such as analytics providers) to collect usage information. Cookies are small data files stored on your device. You can control cookies through your browser settings.
             </p>
           </div>
-          <div className="relative order-1 md:order-2">
+          <motion.div 
+            className="relative order-1 md:order-2"
+            initial={{ opacity: 0, x: 100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1374&auto=format&fit=crop"
@@ -158,7 +183,7 @@ export default function PrivacyPolicy() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Data Security and Your Rights Block */}
@@ -169,7 +194,13 @@ export default function PrivacyPolicy() {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative order-1 md:order-1">
+          <motion.div 
+            className="relative order-1 md:order-1"
+            initial={{ opacity: 0, x: -100, scale: 0.8 }}
+            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
             <div className="sticky top-8">
               <img
                 src="https://images.unsplash.com/photo-1510511459019-5dda7724fd87?q=80&w=1374&auto=format&fit=crop"
@@ -177,7 +208,7 @@ export default function PrivacyPolicy() {
                 className="w-full h-[400px] md:h-[500px] object-cover rounded-lg"
               />
             </div>
-          </div>
+          </motion.div>
           <div className="order-2 md:order-2">
             <h2 className="text-2xl font-bold mb-4">[ SECURITY & YOUR RIGHTS ]</h2>
             <p className="text-base leading-relaxed mb-6">

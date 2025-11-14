@@ -73,39 +73,32 @@ export function Testimonials() {
 
 const DEFAULT_ITEMS = [
   {
-    title: 'Beautiful UI',
-    description: 'Stunning interface design',
+    title: 'Sarah Martinez',
+    description: 'APP.UI saved me hours of development time. The components are beautiful and production-ready!',
     id: 1,
     icon: <FiFileText className="h-[16px] w-[16px] text-white" />,
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&h=500&fit=crop'
+    image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=500&h=500&fit=crop'
   },
   {
-    title: 'Modern Design',
-    description: 'Clean and minimal aesthetics',
+    title: 'James Chen',
+    description: 'The best React component library I\'ve used. Clean code, modern design, and super easy to customize.',
     id: 2,
     icon: <FiCircle className="h-[16px] w-[16px] text-white" />,
-    image: 'https://images.unsplash.com/photo-1618172193763-c511deb635ca?w=500&h=500&fit=crop'
+    image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=500&fit=crop'
   },
   {
-    title: 'Components',
-    description: 'Reusable and flexible',
+    title: 'Emily Rodriguez',
+    description: 'Game changer for my freelance projects! Copy-paste simplicity with professional results every time.',
     id: 3,
     icon: <FiLayers className="h-[16px] w-[16px] text-white" />,
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=500&h=500&fit=crop'
+    image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&h=500&fit=crop'
   },
   {
-    title: 'Responsive',
-    description: 'Works on all devices',
+    title: 'David Kumar',
+    description: 'Finally, a component library that understands developers. Fast, flexible, and beautifully designed.',
     id: 4,
     icon: <FiLayout className="h-[16px] w-[16px] text-white" />,
-    image: 'https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=500&h=500&fit=crop'
-  },
-  {
-    title: 'Fast & Light',
-    description: 'Optimized performance',
-    id: 5,
-    icon: <FiCode className="h-[16px] w-[16px] text-white" />,
-    image: 'https://images.unsplash.com/photo-1618172193622-ae2d025f4032?w=500&h=500&fit=crop'
+    image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=500&h=500&fit=crop'
   }
 ];
 

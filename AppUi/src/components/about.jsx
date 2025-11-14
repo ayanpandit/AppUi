@@ -14,15 +14,16 @@ export default function Aboutus() {
     offset: ["start start", "end end"]
   });
   
-  const headerY = useTransform(scrollYProgress, [0, 0.1], [50, 0]);
-  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const headerY = useTransform(scrollYProgress, [0, 0.1], [0, 0]);
+  const headerOpacity = useTransform(scrollYProgress, [0, 0.1], [1, 1]);
 
   return (
     <div ref={pageRef} className="min-h-screen bg-black text-white">
       {/* Header */}
       <motion.div 
         className="px-8 py-8 border-b border-gray-800"
-        style={{ y: headerY, opacity: headerOpacity }}
+        initial={{ opacity: 1, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
       >
         <div className="max-w-[1400px] mx-auto flex items-start justify-between">
           <div>
