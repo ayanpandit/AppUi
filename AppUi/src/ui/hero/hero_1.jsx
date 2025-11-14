@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { User, Home, Briefcase, ChevronDown } from 'lucide-react';
 
-const Hero = () => {
+const Hero_1 = () => {
   const [showPortalDropdown, setShowPortalDropdown] = useState(false);
   const [showSub, setShowSub] = useState(false);
   const [bgIndex, setBgIndex] = useState(0);
@@ -221,4 +221,4 @@ const Hero = () => {
   );
 };
 
-export default Hero;
+export default Hero_1;

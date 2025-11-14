@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Hero from '../ui/hero/hero_1';
 
 const Hero_4 = () => {
   const [isVisible, setIsVisible] = useState(false);
