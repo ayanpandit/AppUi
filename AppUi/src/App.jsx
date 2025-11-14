@@ -10,6 +10,7 @@ import About from "./components/about";
 import PrivacyPolicy from "./components/privacypolicy";
 import TermsOfService from "./components/tos";
 import Blog from "./components/blog";
+import SelectFeedback from "./components/select_feedback";
 import SmoothScroll from "./components/SmoothScroll";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
   <Route path="/privacy" element={<PrivacyPolicy />} />
   <Route path="/terms" element={<TermsOfService />} />
   <Route path="/blog" element={<Blog />} />
+  <Route path="/select_feedback" element={<SelectFeedback />} />
       </Routes>
     </HashRouter>
   );
