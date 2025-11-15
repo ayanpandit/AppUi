@@ -78,30 +78,27 @@ const Card_1 = () => {
     }
   ];
 
-  useEffect(() => {
-    const handleWheel = (e) => {
-      e.preventDefault();
-      
-      const now = Date.now();
-      // Debounce: only allow scroll every 400ms for smooth transitions
-      if (now - lastScrollTime.current < 400) return;
-      
-      if (e.deltaY > 0 && activeIndex < cards.length - 1) {
-        setActiveIndex(prev => prev + 1);
-        lastScrollTime.current = now;
-      } else if (e.deltaY < 0 && activeIndex > 0) {
-        setActiveIndex(prev => prev - 1);
-        lastScrollTime.current = now;
-      }
-    };
-
-    // Listen on window for scroll anywhere
-    window.addEventListener('wheel', handleWheel, { passive: false });
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, [activeIndex, cards.length]);
+  // Only handle wheel events when mouse is over the card area
+  const handleWheel = (e) => {
+    e.preventDefault();
+    const now = Date.now();
+    if (now - lastScrollTime.current < 400) return;
+    if (e.deltaY > 0 && activeIndex < cards.length - 1) {
+      setActiveIndex(prev => prev + 1);
+      lastScrollTime.current = now;
+    } else if (e.deltaY < 0 && activeIndex > 0) {
+      setActiveIndex(prev => prev - 1);
+      lastScrollTime.current = now;
+    }
+  };
 
   return (
-    <div className="w-full h-screen bg-black overflow-hidden relative">
+    <div 
+      className="w-full h-screen bg-black overflow-hidden relative"
+      onWheel={handleWheel}
+      tabIndex={0}
+      style={{ outline: 'none' }}
+    >
       {/* Radial gradient background */}
       <div 
         className="absolute inset-0" 
