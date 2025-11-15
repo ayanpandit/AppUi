@@ -1,11 +1,14 @@
 // Central component registry
+
 import navbarComponents from './navbar';
 import heroComponents from './hero';
+import cardComponents from './card';
 
 // Aggregate all component categories
 export const componentRegistry = {
   navbar: navbarComponents,
   hero: heroComponents,
+  card: cardComponents,
   // Add more categories as you create them
   // footer: footerComponents,
   // etc.

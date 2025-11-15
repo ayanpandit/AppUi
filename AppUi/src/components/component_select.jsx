@@ -37,6 +37,16 @@ export default function ComponentSelect() {
               <p className="text-white/60 text-xs mt-2 uppercase">Hero sections</p>
             </div>
           </div>
+          {/* cards category */}
+          <div 
+            onClick={() => handleCategoryClick('card')}
+            className="group relative bg-white/5 backdrop-blur-md rounded-lg p-6 min-h-[220px] border border-white/10 hover:bg-white/10 transition-all duration-300 flex items-center justify-center cursor-pointer overflow-hidden"
+          >
+            <div className="relative z-10 text-center">
+              <h3 className="text-3xl font-bold tracking-tight text-white">CARDS</h3>
+              <p className="text-white/60 text-xs mt-2 uppercase">Card components</p>
+            </div>
+          </div>
 
         </div>
       </div>

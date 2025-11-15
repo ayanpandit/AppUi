@@ -46,7 +46,7 @@ const TravelCard = ({ image, scale, opacity, isActive, title, description }) => 
   );
 };
 
-const test = () => {
+const Card_1 = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const lastScrollTime = useRef(0);
   
@@ -157,4 +157,4 @@ const test = () => {
   );
 };
 
-export default test;
+export default Card_1;
