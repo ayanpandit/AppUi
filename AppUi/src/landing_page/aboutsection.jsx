@@ -25,22 +25,22 @@ export default function AboutSection() {
   const features = [
     {
       title: "OPEN SOURCE RECOGNITION",
-      year: "2024",
+      type: "GitHub Trending",
       link: "#"
     },
     {
       title: "REACT COMPONENT LIBRARY AWARD",
-      year: "2023",
+      type: "Community Award",
       link: "#"
     },
     {
       title: "TAILWIND CSS INNOVATION",
-      year: "2022",
+      type: "CSS Weekly Feature",
       link: "#"
     },
     {
       title: "DEVELOPER TOOL EXCELLENCE",
-      year: "2021",
+      type: "Product Hunt",
       link: "#"
     }
   ];
@@ -94,7 +94,7 @@ export default function AboutSection() {
               <a href="https://github.com/ayanpandit/AppUi" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block px-6 py-3 bg-white text-black text-xs font-bold tracking-wider uppercase hover:bg-gray-200 transition-colors">
                 VIEW GITHUB
               </a>
-              <p className="mt-8 text-sm text-gray-400">[ EST. 2021 ]</p>
+              <p className="mt-8 text-sm text-gray-400">[ EST. 2025]</p>
             </motion.div>
           </div>
 
@@ -166,7 +166,7 @@ export default function AboutSection() {
                       {feature.title}
                     </span>
                     <div className="flex items-center gap-4">
-                      <span className="text-sm text-gray-400">{feature.year}</span>
+                      <span className="text-sm text-gray-400">{feature.type}</span>
                       <svg
                         className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors"
                         fill="none"
